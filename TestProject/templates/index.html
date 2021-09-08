@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <form method="get" style="display:flex">
+        <p>База не инициализирована</p>
+        <input type="file" name="file">
+        <button type="submit">Отправить файл</button>
+    </form>
+
+    <form method="get" style="display:flex">
+        <p>GetDataByID</p>
+        <input placeholder="InputID">
+        <button type="submit">Get data!</button>
+    </form>
+
+    <form method="get" style="display:flex">
+        <p>DeleteDataByID</p>
+        <input placeholder="InputID">
+        <button type="submit">DeleteObject!</button>
+    </form>
+
+    <form method="post">
+        <p>AddData</p>
+        <ul>
+            <li>
+                <input placeholder="Station">
+            </li>
+            <li>
+                <input placeholder="Line">
+            </li>
+            <li>
+                <input placeholder="AdmArea">
+            </li>
+            <li>
+                <input placeholder="District">
+            </li>
+            <li>
+                <input placeholder="Status">
+            </li>
+            <li>
+                <button type="submit">Add row into collection!</button>
+            </li>
+        </ul>
+    </form>
+
+    <form method="get" style="display:flex">
+        <p>GetListOfData</p>
+        <input placeholder="Limit">
+        <button type="submit">GetItems!</button>
+    </form>
+
+</body>
+</html>
