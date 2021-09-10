@@ -10,52 +10,55 @@
 
 
 <body>
-    <form method="get" style="display:flex">
-        <p>База не инициализирована</p>
+    <form method="post" style="display:flex">{% csrf_token %}
+        <p>Environments: </p>
         <input type="file" name="file">
-        <button type="submit">Отправить файл</button>
+        <input type="submit">
     </form>
 
-    <form method="get" style="display:flex">
+    <form method="get" action="/api/data/" style="display:flex">
         <p>GetDataByID</p>
-        <input placeholder="InputID">
-        <button type="submit">Get data!</button>
+        <input type="text" name="getID" placeholder="InputID">
+        <input type="submit"></input>
     </form>
 
-    <form method="get" style="display:flex">
+    <form method="get" action="/api/data/" style="display:flex">
         <p>DeleteDataByID</p>
-        <input placeholder="InputID">
-        <button type="submit">DeleteObject!</button>
+        <input name="deleteID" placeholder="deleteID">
+        <input type="submit"></input>
     </form>
 
-    <form method="post">
+    <form method="post" action="/api/data/add/">{% csrf_token %}
         <p>AddData</p>
         <ul>
             <li>
-                <input placeholder="Station">
+                <input name="station" placeholder="Station">
             </li>
             <li>
-                <input placeholder="Line">
+                <input name="line" placeholder="Line">
             </li>
             <li>
-                <input placeholder="AdmArea">
+                <input name="admArea" placeholder="AdmArea">
             </li>
             <li>
-                <input placeholder="District">
+                <input name="district" placeholder="District">
             </li>
             <li>
-                <input placeholder="Status">
+                <input name="status" placeholder="Status">
             </li>
             <li>
-                <button type="submit">Add row into collection!</button>
+                <input type="submit"></input>
             </li>
         </ul>
     </form>
 
-    <form method="get" style="display:flex">
+    <form method="get" action="api/data/list/">
         <p>GetListOfData</p>
-        <input placeholder="Limit">
-        <button type="submit">GetItems!</button>
+        <ul>
+            <li><input name="page" placeholder="Page"></li>
+            <li><input name="limit" placeholder="Limit"></li>
+            <li><input type="submit"></li>
+        </ul>
     </form>
 
 </body>
