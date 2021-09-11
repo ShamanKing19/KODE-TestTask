@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseGone
+from .forms import DatabaseForm
 import operator
 import logging
 import json
@@ -17,7 +18,9 @@ limit = 'limit'
 
 
 def index(request):
-    return render(request, 'index.html')
+
+    form = DatabaseForm()
+    return render(request, 'index.html', {'form': form})
 
 
 # Вывод определённого количества записей
@@ -41,7 +44,7 @@ def add(request):
     database_list.append({
         'Station': request.POST['station'],
         'Line': request.POST['line'],
-        'AdmArea': request.POST['admArea'],
+        'adm_area': request.POST['adm_area'],
         'District': request.POST['district'],
         'Status': request.POST['status'],
         'ID': str(int(database_list[-1]['ID']) + 1)

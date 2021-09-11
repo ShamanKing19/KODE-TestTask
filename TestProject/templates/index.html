@@ -28,29 +28,11 @@
         <input type="submit"></input>
     </form>
 
-    <form method="post" action="/api/data/add/">{% csrf_token %}
+    <form method="post" action="/api/data/add/" style="display: grid; justify-content: start;">{% csrf_token %}
         <p>AddData</p>
-        <ul>
-            <li>
-                <input name="station" placeholder="Station">
-            </li>
-            <li>
-                <input name="line" placeholder="Line">
-            </li>
-            <li>
-                <input name="admArea" placeholder="AdmArea">
-            </li>
-            <li>
-                <input name="district" placeholder="District">
-            </li>
-            <li>
-                <input name="status" placeholder="Status">
-            </li>
-            <li>
-                <input type="submit"></input>
-            </li>
-        </ul>
-    </form>
+        {{ form }}
+        <input type="submit">
+     </form>
 
     <form method="get" action="api/data/list/">
         <p>GetListOfData</p>
